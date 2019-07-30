@@ -33,7 +33,7 @@ view: tooltipify {
     sql: ${my_measure} ;;
     type: number
     # In this example, this html parameter has the logic we want to apply repeatably.  Because of this approach, we'll be able to manage this feature's code in ONE place
-    html: {{my_measure._rendered_value}}<br><div align="center" style="width:100%; color:white; background:gray; font-size:10px">*{{tooltip_for_my_measure._rendered_value}}</div> ;;
+      html:{{my_measure._rendered_value}} <span class="label label-default" style="color:DarkSlateGray;padding-top:0px;padding-bottom:0px;font-size:10px">*{{tooltip_for_my_measure._rendered_value}}</span>;;
   }
 }
 
