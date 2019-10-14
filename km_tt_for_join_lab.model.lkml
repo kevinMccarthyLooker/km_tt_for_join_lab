@@ -1,5 +1,30 @@
 connection: "thelook_events_redshift"
-include: "*.view"
+include: "/views/*.view"
+
+explore: order_items {
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.user_id} = ${users.id} ;;
+  }
+
+  join: inventory_items {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.inventory_item_id} = ${inventory_items.id};;
+  }
+
+  join: products {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${inventory_items.product_id} = ${products.id} ;;
+  }
+
+}
+
+
+###original example###
+
 
 explore: users {
   #expose my extended versions of my feature, using a 'bare join'

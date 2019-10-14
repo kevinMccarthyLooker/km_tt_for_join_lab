@@ -1,5 +1,12 @@
+include: "/features/custom_tiers.view.lkml"
+
 view: users {
   sql_table_name: public.users ;;
+  extends: [custom_tiers]
+
+  dimension: field_to_compare {
+    sql: ${age} ;;
+  }
 
   dimension: id {
     primary_key: yes
