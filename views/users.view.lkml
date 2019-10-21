@@ -5,9 +5,10 @@ view: users {
   extends: [custom_tiers]
 
   dimension: field_to_compare {
-    label: "Custom Age Tiers"
     sql: ${age} ;;
   }
+
+  dimension:compare_groups{label: "Custom Age Tiers"}
 
   dimension: id {
     primary_key: yes
