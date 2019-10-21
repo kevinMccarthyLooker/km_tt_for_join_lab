@@ -5,6 +5,7 @@ view: users {
   extends: [custom_tiers]
 
   dimension: field_to_compare {
+    label: "Custom Age Tiers"
     sql: ${age} ;;
   }
 
